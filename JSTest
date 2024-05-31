@@ -1,0 +1,38 @@
+// Variable to hold NFT's
+let nftCollection = [];
+
+// Function to mint an NFT with metadata and store it in the nftCollection array
+function mintNFT(name, eyeColor, shirtType, bling) {
+    let nft = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+    nftCollection.push(nft);
+}
+
+// Function to print all NFT metadata to the console
+function listNFTs() {
+    console.log("Listing all NFTs:");
+    nftCollection.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Eye Color: " + nft.eyeColor);
+        console.log("Shirt Type: " + nft.shirtType);
+        console.log("Bling: " + nft.bling);
+        console.log("----------------------");
+    });
+}
+
+// Function to return the total number of NFTs minted
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Mint some NFTs
+mintNFT("Cool NFT", "Brown", "Hoodie", "Diamond Necklace");
+mintNFT("Awesome NFT", "Blue", "T-shirt", "Gold Chain");
+
+// List NFTs and print total supply
+listNFTs();
+console.log("Total NFTs minted: " + getTotalSupply());
